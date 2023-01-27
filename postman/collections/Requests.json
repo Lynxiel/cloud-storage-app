@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "6dba5c5e-7f80-4a8e-b366-fa06722b0f47",
+		"name": "Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25492440-6dba5c5e-7f80-4a8e-b366-fa06722b0f47"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "api/user",
+					"id": "ba26d624-d747-4024-a5c2-3054e2029b30",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/user",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/user",
+					"id": "d3ffc7c4-a127-42c8-9a7f-f7550d19580a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email2@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/user",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "Test Request"
+					},
+					"response": []
+				}
+			],
+			"id": "437c4964-2f08-4ffa-a3fe-a285f7e273fe"
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "api/file",
+					"id": "7f9dd967-6ca7-4527-bcc5-65e3c282b837",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}api/file",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/file/{{id}}",
+					"id": "80bdb8b9-220c-485c-8f3b-1010958deeaa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/file/2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"file",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/file/{{id}}/download",
+					"id": "729347cf-209f-4321-920c-fc575063d234",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/file/2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"file",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/file",
+					"id": "1b7d9aaf-200f-481b-90f1-fa7c4d71a5ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/34d0ec00-7fc7-11ed-9ac5-cf1d19f00176_gallery.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Url}}api/file",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/file/{{id}}",
+					"id": "2812e76c-58bc-449d-8409-41e5c988c2b4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"type": "text",
+									"value": "new title"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Url}}api/file/2",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"file",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/file/{{id}}",
+					"id": "1bc087a8-2735-41be-be3f-51c3d1c531ee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"type": "text",
+									"value": "new title"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Url}}api/file/1",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"file",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "7e3619fd-099e-4126-a67b-17e2d871fd79"
+		},
+		{
+			"name": "Folder",
+			"item": [
+				{
+					"name": "api/folders",
+					"id": "0fbe58b2-40c6-4080-ba23-c1c7ed073ff4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{Url}}api/folder",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/folder/{id}",
+					"id": "8c7890fe-f3eb-49ff-adfa-524426e49edd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{Url}}api/folder",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/folder",
+					"id": "da645389-5250-495a-9405-bc754c423248",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "folder_title1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Url}}api/folder",
+							"host": [
+								"{{Url}}api"
+							],
+							"path": [
+								"folder"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "77f33f77-4f61-4790-b508-5d021a2c8544"
+		}
+	]
+}
