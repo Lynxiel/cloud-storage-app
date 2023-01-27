@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'api_token'
     ];
 
     /**
@@ -41,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function folders(){
+        return $this->hasMany(Folder::class);
+    }
+
+    public function files(){
+       return  $this->hasMany(File::class);
+    }
+
+
+    public function getPathAttribute(){
+        return $this->path = storage_path().'/app/'.$this->id . '/';
+    }
+
+
 }
